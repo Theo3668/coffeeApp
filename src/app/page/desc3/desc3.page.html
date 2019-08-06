@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <!-- <ion-title>desc1</ion-title> -->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="medium">
+    <ion-card>
+        <ion-card-header class="headerText">
+            <ion-label float-left>caffeMocha</ion-label>
+            <ion-label float-right>R{{caffeMocha}}</ion-label>
+            <br>
+        </ion-card-header>
+
+        <ion-card-content class="cardText">
+            <img src="/assets/images/Caffe_Mocha1.jpg"> caffè mocha is based on espresso and hot milk but with added chocolate flavoring and sweetener, typically in the form of cocoa powder and sugar....varieties use chocolate syrup instead, and some
+            may contain dark or milk chocolate
+        </ion-card-content>
+    </ion-card>
+    <table>
+        <tr>
+            <!-- grid1 start -->
+            <th>
+                <ion-label class="labelText">cream</ion-label><br>
+                <tr>
+                    <td>
+                        <ion-button fill="outline" (click)="onCreamSub()">-</ion-button>
+                        <ion-button fill="outline" (click)="onCreamAdd()">+</ion-button>
+                    </td>
+                </tr>
+            </th>
+            <!-- grid1 end -->
+
+            <!-- grid2  start -->
+
+            <th class="grid2">
+                <ion-label class="labelText">white choc</ion-label><br>
+                <tr>
+                    <td>
+                        <ion-button fill="outline" (click)="onSyrupSub()">-</ion-button>
+                        <ion-button fill="outline" (click)="onSyrupAdd()">+</ion-button>
+                    </td>
+                </tr>
+            </th>
+            <!-- grid2 end -->
+
+            <!-- grid3  start -->
+
+            <th class="grid3">
+                <ion-label class="labelText">dark choc</ion-label><br>
+                <tr>
+                    <td>
+                        <ion-button fill="outline" (click)="onSyrupSub()">-</ion-button>
+                        <ion-button fill="outline" (click)="onSyrupAdd()">+</ion-button>
+                    </td>
+                </tr>
+            </th>
+            <!-- grid3 end -->
+        </tr>
+    </table>
+
+    <ion-button fill="outline" (click)="dismiss()" class="startBtn">Done</ion-button>
+
+
+</ion-content>

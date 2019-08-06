@@ -1,14 +1,327 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="dark">
+        <ion-title class="titleText">
+            corner barista
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+    <ion-card color="medium">
+        <ion-card-header>
+            <ion-item>
+                <ion-label position="floating">Enter your name</ion-label>
+                <ion-input clearInput value="Enter your name" color="primary" [(ngModel)]="name"></ion-input>
+            </ion-item>
+            <ion-row>
+                <ion-col>
+                    <p class="firstCard">Amount Due</p>
+                </ion-col>
+                <ion-col>
+                    <p float-right class="firstCard">R {{finalPrice}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-button color="primary" (click)="onFinalOrder()" class="reset">Place Order</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-card-header>
+    </ion-card>
+
+    <ion-card color="medium">
+        <ion-item color="medium">
+            <ion-label>ion-item in a card, icon left, button right</ion-label>
+            <img src="/assets/images/brewed_coffee1.jpg">
+            <ion-button fill="outline" slot="end" (click)="presentModal()">Order</ion-button>
+        </ion-item>
+
+        <ion-card-content class="cardContent">
+            <table>
+                <tr>
+                    <!-- grid1 start -->
+                    <th>
+                        <ion-label class="labelText">cream</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onCreamSub()">-</ion-button>
+                                <ion-button fill="outline" (click)="onCreamAdd()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid1 end -->
+
+                    <!-- grid2  start -->
+
+                    <th class="grid2">
+                        <ion-label class="labelText">syrup</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSub()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAdd()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid2 end -->
+                </tr>
+            </table>
+            brewed coffee.
+            <p float-right><b>R{{brewedCoffee}}</b></p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="medium">
+        <ion-item color="medium">
+            <ion-label>ion-item in a card, icon left, button right</ion-label>
+            <img src="/assets/images/americano1.jpg">
+            <ion-button fill="outline" slot="end" (click)="onAmericano()">Order</ion-button>
+        </ion-item>
+
+        <ion-card-content class="cardContent">
+            <table>
+                <tr>
+                    <!-- grid1 start -->
+                    <th>
+                        <ion-label class="labelText">cream</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onCreamSubSec()">-</ion-button>
+                                <ion-button fill="outline" (click)="onCreamAddSec()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid1 end -->
+
+                    <!-- grid2  start -->
+
+                    <th class="grid2">
+                        <ion-label class="labelText">milk</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSubSec()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAddSec()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid2 end -->
+                </tr>
+            </table>
+            americano.
+            <p float-right><b>R{{americano}}</b></p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="medium">
+        <ion-item color="medium">
+            <ion-label>ion-item in a card, icon left, button right</ion-label>
+            <img src="/assets/images/Caffe_Mocha1.jpg">
+            <ion-button fill="outline" slot="end" (click)="onCaffeMocha()">Order</ion-button>
+        </ion-item>
+
+        <ion-card-content class="cardContent">
+            <table>
+                <tr>
+                    <!-- grid1 start -->
+                    <th>
+                        <ion-label class="labelText">cream</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onCreamSubThird()">-</ion-button>
+                                <ion-button fill="outline" (click)="onCreamAddThird()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid1 end -->
+
+                    <!-- grid2  start -->
+
+                    <th class="grid2">
+                        <ion-label class="labelText">white choc</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSubThird()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAddThird()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid2 end -->
+
+                    <!-- grid3  start -->
+
+                    <th class="grid3">
+                        <ion-label class="labelText">dark choc</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSubThird()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAddThird()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid3 end -->
+                </tr>
+            </table>
+            caffe mocha.
+            <p float-right><b>R{{caffeMocha}}</b></p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="medium">
+        <ion-item color="medium">
+            <ion-label>ion-item in a card, icon left, button right</ion-label>
+            <img src="/assets/images/cappuccino.jpg">
+            <ion-button fill="outline" slot="end" (click)="onEspresso()">Order</ion-button>
+        </ion-item>
+
+        <ion-card-content class="cardContent">
+            <table>
+                <tr>
+                    <!-- grid1 start -->
+                    <th>
+                        <ion-label class="labelText">crema</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onCreamSubFouth()">-</ion-button>
+                                <ion-button fill="outline" (click)="onCreamAddFouth()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid1 end -->
+
+                    <!-- grid2  start -->
+
+                    <th class="grid2">
+                        <ion-label class="labelText">syrup</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSubFouth()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAddFouth()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid2 end -->
+                </tr>
+            </table>
+            espresso.
+            <p float-right><b>R{{espresso}}</b></p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="medium">
+        <ion-item color="medium">
+            <ion-label>ion-item in a card, icon left, button right</ion-label>
+            <img src="/assets/images/cold-brew-coffee1.jpg">
+            <ion-button fill="outline" slot="end" (click)="onColdBrewedCoffee()">Order</ion-button>
+        </ion-item>
+
+        <ion-card-content class="cardContent">
+            <table>
+                <tr>
+                    <!-- grid1 start -->
+                    <th>
+                        <ion-label class="labelText">chocolate</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onCreamSubFifth()">-</ion-button>
+                                <ion-button fill="outline" (click)="onCreamAddFifth()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid1 end -->
+
+                    <!-- grid2  start -->
+
+                    <th class="grid2">
+                        <ion-label class="labelText">sweetner</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSubFifth()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAddFifth()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid2 end -->
+                </tr>
+            </table>
+            cold brewed coffee.
+            <p float-right><b>R{{coldBrewedCoffee}}</b></p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="medium">
+        <ion-item color="medium">
+            <ion-label>ion-item in a card, icon left, button right</ion-label>
+            <img src="/assets/images/mocha1.jpg">
+            <ion-button fill="outline" slot="end" (click)="onCappuccino()">Order</ion-button>
+        </ion-item>
+
+        <ion-card-content class="cardContent">
+            <table>
+                <tr>
+                    <!-- grid1 start -->
+                    <th>
+                        <ion-label class="labelText">cream</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onCreamSubSixth()">-</ion-button>
+                                <ion-button fill="outline" (click)="onCreamAddSixth()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid1 end -->
+
+                    <!-- grid2  start -->
+
+                    <th class="grid2">
+                        <ion-label class="labelText">syrup</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSubSixth()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAddSixth()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid2 end -->
+                </tr>
+            </table>
+            cappuccino.
+            <p float-right><b>R{{cappuccino}}</b></p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="medium">
+        <ion-item color="medium">
+            <ion-label>ion-item in a card, icon left, button right</ion-label>
+            <img src="/assets/images/flatwhite1.jpg">
+            <ion-button fill="outline" slot="end" (click)="onFlatWhite()">Order</ion-button>
+        </ion-item>
+
+        <ion-card-content class="cardContent">
+            <table>
+                <tr>
+                    <!-- grid1 start -->
+                    <th>
+                        <ion-label class="labelText">cream</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onCreamSub()">-</ion-button>
+                                <ion-button fill="outline" (click)="onCreamAdd()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid1 end -->
+
+                    <!-- grid2  start -->
+
+                    <th class="grid2">
+                        <ion-label class="labelText">syrup</ion-label><br>
+                        <tr>
+                            <td>
+                                <ion-button fill="outline" (click)="onSyrupSub()">-</ion-button>
+                                <ion-button fill="outline" (click)="onSyrupAdd()">+</ion-button>
+                            </td>
+                        </tr>
+                    </th>
+                    <!-- grid2 end -->
+                </tr>
+            </table>
+            flat white.
+            <p float-right><b>R{{flatWhite}}</b></p>
+        </ion-card-content>
+    </ion-card>
+
 </ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <!-- <ion-title>desc1</ion-title> -->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="medium">
+    <ion-card>
+        <ion-card-header class="headerText">
+            <ion-label float-left>espresso</ion-label>
+            <ion-label float-right>R{{espresso}}</ion-label>
+            <br>
+        </ion-card-header>
+
+        <ion-card-content class="cardText">
+            <img src="/assets/images/cappuccino.jpg"> A classic espresso, comprised of a single shot which has a volume of around 1.5 ounces, with a double shot being twice this amount....An excellent crema is golden-brown in color that possesses the
+            best tastes and aromatic qualities floats on top.
+        </ion-card-content>
+    </ion-card>
+    <table>
+        <tr>
+            <!-- grid1 start -->
+            <th>
+                <ion-label class="labelText">crema</ion-label><br>
+                <tr>
+                    <td>
+                        <ion-button fill="outline" (click)="onCreamSub()">-</ion-button>
+                        <ion-button fill="outline" (click)="onCreamAdd()">+</ion-button>
+                    </td>
+                </tr>
+            </th>
+            <!-- grid1 end -->
+
+            <!-- grid2  start -->
+
+            <th class="grid2">
+                <ion-label class="labelText">syrup</ion-label><br>
+                <tr>
+                    <td>
+                        <ion-button fill="outline" (click)="onSyrupSub()">-</ion-button>
+                        <ion-button fill="outline" (click)="onSyrupAdd()">+</ion-button>
+                    </td>
+                </tr>
+            </th>
+            <!-- grid2 end -->
+        </tr>
+    </table>
+
+    <ion-button fill="outline" (click)="dismiss()" class="startBtn">Done</ion-button>
+
+
+</ion-content>
